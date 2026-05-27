@@ -1,0 +1,25 @@
+# macOS
+.DS_Store
+*.swp
+
+# SwiftPM
+.build/
+.swiftpm/
+Package.resolved
+
+# Xcode
+*.xcuserstate
+xcuserdata/
+*.xcworkspace/xcuserdata/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+build/
+DerivedData/
+
+# Built app bundle + distribution artifacts (rebuildable from source)
+*.app
+*.dmg
+dmg-staging/
+
+# Generated icons (kept in repo via AppIcon.iconset, regenerable)
+# Keep AppIcon.icns and AppIcon.iconset — they're assets, not build artifacts

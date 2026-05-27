@@ -1,0 +1,380 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6F46EA49EF6C1D15193102CE /* CoffeeBreakApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D4A183E234B62EE8BBEE /* CoffeeBreakApp.swift */; };
+		F9A2BE75B275FD355381028B /* CoffeeStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E35B28AF855D4A00E27A98 /* CoffeeStatus.swift */; };
+		709C2291A7E4CCDE92075C6C /* Peer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CFA92103E80B4953E16ED3 /* Peer.swift */; };
+		89446C7D16BED3F4F2C5E109 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E6615C6C15530EE545BE4D /* NetworkService.swift */; };
+		FF05DBD062C5EBC2081D15D4 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D86AA8801A9F098FC2605D /* NotificationService.swift */; };
+		00EB7E087BFE35E9D1F5EC28 /* PreferencesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5355423CEC833220A39B2FFE /* PreferencesStore.swift */; };
+		A016E42B4D031D1A71EF7EED /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453BA1278AB74157B8B6375 /* AppState.swift */; };
+		01E9D94096D86431EEADAEED /* MenuContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AA8067FADBE07DD83E4B4D /* MenuContentView.swift */; };
+		29232AEB5BF5F26EEF6B38C7 /* PeerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E905E514E4FAF8C5CFFD9 /* PeerRow.swift */; };
+		8FB97ABCA148DCB548DDFF1C /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402680839EE38E2A634871CB /* PreferencesView.swift */; };
+		481F9529F4A927DCBD3068E3 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AAD63EEB0E278499F8B405 /* WelcomeView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4A32D4A183E234B62EE8BBEE /* CoffeeBreakApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoffeeBreakApp.swift"; sourceTree = "<group>"; };
+		B1E35B28AF855D4A00E27A98 /* CoffeeStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoffeeStatus.swift"; sourceTree = "<group>"; };
+		E9CFA92103E80B4953E16ED3 /* Peer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Peer.swift"; sourceTree = "<group>"; };
+		61E6615C6C15530EE545BE4D /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkService.swift"; sourceTree = "<group>"; };
+		80D86AA8801A9F098FC2605D /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationService.swift"; sourceTree = "<group>"; };
+		5355423CEC833220A39B2FFE /* PreferencesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreferencesStore.swift"; sourceTree = "<group>"; };
+		2453BA1278AB74157B8B6375 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppState.swift"; sourceTree = "<group>"; };
+		B8AA8067FADBE07DD83E4B4D /* MenuContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuContentView.swift"; sourceTree = "<group>"; };
+		B30E905E514E4FAF8C5CFFD9 /* PeerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PeerRow.swift"; sourceTree = "<group>"; };
+		402680839EE38E2A634871CB /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreferencesView.swift"; sourceTree = "<group>"; };
+		63AAD63EEB0E278499F8B405 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WelcomeView.swift"; sourceTree = "<group>"; };
+		CE6C1C9FBE704E9769DB86AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info.plist"; sourceTree = "<group>"; };
+		BD8DD012EB416358FFE48913 /* CoffeeBreak.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CoffeeBreak.entitlements"; sourceTree = "<group>"; };
+		9CD7C54B12C799C2EF3FFEE7 /* CoffeeBreak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoffeeBreak.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FDD544A12142FE8A4F24ADCB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F400ED860DAE16A57B7AA626 = {
+			isa = PBXGroup;
+			children = (
+				FA02CD8EA1D65A53558DF404 /* CoffeeBreak */,
+				2002DF107CCEB367A8083E6A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2002DF107CCEB367A8083E6A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9CD7C54B12C799C2EF3FFEE7 /* CoffeeBreak.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA02CD8EA1D65A53558DF404 /* CoffeeBreak */ = {
+			isa = PBXGroup;
+			children = (
+				4A32D4A183E234B62EE8BBEE /* CoffeeBreakApp.swift */,
+				37BC97488DB09DA24AD05D16 /* Models */,
+				671221E6A52E62B8698DBD10 /* Services */,
+				57B89F34C190801E55E73DD5 /* State */,
+				8CF736A49654C86CE6123D56 /* Views */,
+				CE6C1C9FBE704E9769DB86AB /* Info.plist */,
+				BD8DD012EB416358FFE48913 /* CoffeeBreak.entitlements */,
+			);
+			path = "CoffeeBreak";
+			sourceTree = "<group>";
+		};
+		37BC97488DB09DA24AD05D16 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B1E35B28AF855D4A00E27A98 /* CoffeeStatus.swift */,
+				E9CFA92103E80B4953E16ED3 /* Peer.swift */,
+			);
+			path = "Models";
+			sourceTree = "<group>";
+		};
+		671221E6A52E62B8698DBD10 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				61E6615C6C15530EE545BE4D /* NetworkService.swift */,
+				80D86AA8801A9F098FC2605D /* NotificationService.swift */,
+				5355423CEC833220A39B2FFE /* PreferencesStore.swift */,
+			);
+			path = "Services";
+			sourceTree = "<group>";
+		};
+		57B89F34C190801E55E73DD5 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				2453BA1278AB74157B8B6375 /* AppState.swift */,
+			);
+			path = "State";
+			sourceTree = "<group>";
+		};
+		8CF736A49654C86CE6123D56 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B8AA8067FADBE07DD83E4B4D /* MenuContentView.swift */,
+				B30E905E514E4FAF8C5CFFD9 /* PeerRow.swift */,
+				402680839EE38E2A634871CB /* PreferencesView.swift */,
+				63AAD63EEB0E278499F8B405 /* WelcomeView.swift */,
+			);
+			path = "Views";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		66E0DE4D96B256059A21FDE1 /* CoffeeBreak */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D2A15A8957DB8F6C13353C6 /* Build configuration list for PBXNativeTarget "CoffeeBreak" */;
+			buildPhases = (
+				993491A8BEA8D8C88EB30C33 /* Sources */,
+				FDD544A12142FE8A4F24ADCB /* Frameworks */,
+				30479110A87F8A66F73B4E1C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoffeeBreak;
+			productName = CoffeeBreak;
+			productReference = 9CD7C54B12C799C2EF3FFEE7 /* CoffeeBreak.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		27BAE487634C8B1C732BADA2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					66E0DE4D96B256059A21FDE1 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 5A8F8605212E58D5FEE2F170 /* Build configuration list for PBXProject "CoffeeBreak" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F400ED860DAE16A57B7AA626;
+			productRefGroup = 2002DF107CCEB367A8083E6A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				66E0DE4D96B256059A21FDE1 /* CoffeeBreak */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		30479110A87F8A66F73B4E1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		993491A8BEA8D8C88EB30C33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F46EA49EF6C1D15193102CE /* CoffeeBreakApp.swift in Sources */,
+				F9A2BE75B275FD355381028B /* CoffeeStatus.swift in Sources */,
+				709C2291A7E4CCDE92075C6C /* Peer.swift in Sources */,
+				89446C7D16BED3F4F2C5E109 /* NetworkService.swift in Sources */,
+				FF05DBD062C5EBC2081D15D4 /* NotificationService.swift in Sources */,
+				00EB7E087BFE35E9D1F5EC28 /* PreferencesStore.swift in Sources */,
+				A016E42B4D031D1A71EF7EED /* AppState.swift in Sources */,
+				01E9D94096D86431EEADAEED /* MenuContentView.swift in Sources */,
+				29232AEB5BF5F26EEF6B38C7 /* PeerRow.swift in Sources */,
+				8FB97ABCA148DCB548DDFF1C /* PreferencesView.swift in Sources */,
+				481F9529F4A927DCBD3068E3 /* WelcomeView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		7F5A50856DF4961F6C52065C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("DEBUG=1", "$(inherited)");
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F05AFED6495F4AFAA02FEA44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		EC9D297F1F58A088220B12E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS = NO;
+				CODE_SIGN_ENTITLEMENTS = "CoffeeBreak/CoffeeBreak.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "CoffeeBreak/Info.plist";
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks");
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.coffeebreak.CoffeeBreak";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		DACDF800058C37E809D52F76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS = NO;
+				CODE_SIGN_ENTITLEMENTS = "CoffeeBreak/CoffeeBreak.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "CoffeeBreak/Info.plist";
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks");
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.coffeebreak.CoffeeBreak";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5A8F8605212E58D5FEE2F170 /* Build configuration list for PBXProject "CoffeeBreak" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F5A50856DF4961F6C52065C /* Debug */,
+				F05AFED6495F4AFAA02FEA44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D2A15A8957DB8F6C13353C6 /* Build configuration list for PBXNativeTarget "CoffeeBreak" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC9D297F1F58A088220B12E3 /* Debug */,
+				DACDF800058C37E809D52F76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 27BAE487634C8B1C732BADA2 /* Project object */;
+}

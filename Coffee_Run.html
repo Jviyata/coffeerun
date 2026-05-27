@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Coffee Run — Feature & Implementation Reference</title>
+<style>
+  @page { size: Letter; margin: 0.7in; }
+  :root {
+    --brown: #d4a76a;
+    --brown-deep: #5c3a1a;
+    --ink: #1a1a1a;
+    --muted: #6b6b6b;
+    --tint: #f6efe5;
+    --border: #e6e0d4;
+    --accent: #2563eb;
+    --green: #2f7a32;
+    --red: #b3261e;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    font-family: -apple-system, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.45;
+    color: var(--ink);
+    margin: 0;
+    padding: 0;
+  }
+  h1 {
+    font-size: 28pt;
+    font-weight: 800;
+    margin: 0 0 4pt 0;
+    letter-spacing: -0.01em;
+  }
+  h2 {
+    font-size: 16pt;
+    font-weight: 700;
+    margin: 22pt 0 6pt 0;
+    color: var(--brown-deep);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 4pt;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 12.5pt;
+    font-weight: 700;
+    margin: 14pt 0 4pt 0;
+    color: var(--ink);
+    page-break-after: avoid;
+  }
+  h4 {
+    font-size: 10.5pt;
+    font-weight: 700;
+    margin: 10pt 0 3pt 0;
+    color: var(--brown-deep);
+    page-break-after: avoid;
+  }
+  p { margin: 0 0 7pt 0; }
+  ul, ol { margin: 0 0 8pt 0; padding-left: 18pt; }
+  li { margin-bottom: 3pt; }
+  code, pre {
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 9pt;
+  }
+  code {
+    background: var(--tint);
+    padding: 1pt 4pt;
+    border-radius: 3pt;
+  }
+  pre {
+    background: var(--tint);
+    border: 1px solid var(--border);
+    padding: 8pt 10pt;
+    border-radius: 5pt;
+    overflow-x: auto;
+    margin: 4pt 0 10pt 0;
+    line-height: 1.4;
+    white-space: pre-wrap;
+  }
+  .cover {
+    padding: 70pt 0 30pt 0;
+    border-bottom: 2px solid var(--brown);
+    margin-bottom: 18pt;
+    page-break-after: always;
+  }
+  .cover .badge {
+    display: inline-block;
+    background: var(--brown);
+    color: white;
+    font-size: 10pt;
+    font-weight: 700;
+    padding: 3pt 10pt;
+    border-radius: 30pt;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 14pt;
+  }
+  .cover .sub {
+    font-size: 14pt;
+    color: var(--muted);
+    margin-top: 8pt;
+    max-width: 480pt;
+    line-height: 1.4;
+  }
+  .meta {
+    margin-top: 30pt;
+    font-size: 10pt;
+    color: var(--muted);
+  }
+  .meta strong { color: var(--ink); }
+  .toc {
+    background: var(--tint);
+    border: 1px solid var(--border);
+    border-radius: 6pt;
+    padding: 16pt 22pt;
+    margin: 18pt 0;
+  }
+  .toc h3 { margin-top: 0; }
+  .toc ol { columns: 2; column-gap: 24pt; padding-left: 18pt; }
+  .toc li { break-inside: avoid; margin-bottom: 4pt; }
+  .callout {
+    background: var(--tint);
+    border-left: 3pt solid var(--brown);
+    padding: 8pt 12pt;
+    margin: 8pt 0 12pt 0;
+    border-radius: 0 4pt 4pt 0;
+    font-size: 10pt;
+  }
+  .callout strong { color: var(--brown-deep); }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10pt;
+    margin: 8pt 0 12pt 0;
+  }
+  .card {
+    border: 1px solid var(--border);
+    border-radius: 6pt;
+    padding: 10pt 12pt;
+    background: white;
+    break-inside: avoid;
+  }
+  .card .h {
+    font-weight: 700;
+    color: var(--brown-deep);
+    margin-bottom: 3pt;
+    font-size: 10.5pt;
+  }
+  .card .b { color: var(--muted); font-size: 9.5pt; line-height: 1.4; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 9.5pt;
+    margin: 4pt 0 12pt 0;
+  }
+  th, td {
+    border: 1px solid var(--border);
+    padding: 5pt 8pt;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: var(--tint); font-weight: 700; }
+  .kbd {
+    display: inline-block;
+    border: 1px solid var(--border);
+    background: white;
+    padding: 1pt 5pt;
+    border-radius: 3pt;
+    font-family: "SF Mono", Menlo, monospace;
+    font-size: 9pt;
+    font-weight: 600;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.08);
+  }
+  .filepath {
+    font-family: "SF Mono", Menlo, monospace;
+    font-size: 9pt;
+    color: var(--brown-deep);
+  }
+  .footer {
+    margin-top: 30pt;
+    padding-top: 10pt;
+    border-top: 1px solid var(--border);
+    font-size: 9pt;
+    color: var(--muted);
+  }
+  section { page-break-inside: auto; }
+  h2 + p, h3 + p, h4 + p { margin-top: 0; }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="badge">v1.1 · Feature &amp; implementation reference</div>
+  <h1>Coffee Run ☕</h1>
+  <div class="sub">A privacy-first macOS menu bar app for spontaneous office coffee runs. Discovers nearby coworkers over Bonjour, no cloud accounts, no servers.</div>
+  <div class="meta">
+    <strong>Repo:</strong> github.com/rutasraju/coffee-run<br>
+    <strong>Bundle ID:</strong> com.ruta.coffeebreak<br>
+    <strong>Platform:</strong> macOS 13+ (Ventura and newer)<br>
+    <strong>Language:</strong> Swift 5.9 / SwiftUI + AppKit<br>
+    <strong>Distribution:</strong> Ad-hoc signed DMG · App Store ready
+  </div>
+</div>
+
+<div class="toc">
+  <h3>Contents</h3>
+  <ol>
+    <li>Product overview</li>
+    <li>User-facing features</li>
+    <li>Architecture at a glance</li>
+    <li>Networking (Bonjour)</li>
+    <li>State management</li>
+    <li>Persistence &amp; iCloud sync</li>
+    <li>Notifications &amp; rate-limiting</li>
+    <li>Caffeinated Mode (power)</li>
+    <li>Invite a coworker (QR &amp; share)</li>
+    <li>Global hotkey ⌃⌥C</li>
+    <li>Demo mode</li>
+    <li>Steam animations</li>
+    <li>Privacy model</li>
+    <li>File map</li>
+    <li>Build, sign &amp; distribute</li>
+    <li>Roadmap</li>
+  </ol>
+</div>
+
+<section>
+<h2>1. Product overview</h2>
+<p>Coffee Run is a <strong>menu bar app</strong> that lets a small group of coworkers discover each other's coffee intent without anyone opening Slack, sending a message, or syncing calendars. Click the cup in the menu bar, declare "I want coffee" or start a Coffee Run, and anyone nearby running the app sees it.</p>
+
+<p>The product philosophy is intentionally narrow:</p>
+<ul>
+  <li><strong>Local network only.</strong> Bonjour / mDNS discovers peers on the same Wi-Fi. Nothing leaves the local subnet.</li>
+  <li><strong>No accounts, no servers.</strong> No login, no analytics. Identity is a device-local UUID.</li>
+  <li><strong>Ambient, not chatty.</strong> The menu shows passive presence — like a hallway. Active "buzz" notifications are rate-limited and easily silenced.</li>
+  <li><strong>Spontaneity over scheduling.</strong> Runs default to <em>now</em>. "In 5" / "In 15" exist but aren't the main path.</li>
+</ul>
+
+<div class="callout">
+  <strong>Why menu bar?</strong> Coffee runs are decided in 5 seconds, not 5 minutes. A full app window would lose against the friction of opening Slack. The menu bar is the only surface that survives the comparison.
+</div>
+</section>
+
+<section>
+<h2>2. User-facing features</h2>
+
+<h3>2.1 The menu</h3>
+<p>Single popover anchored on the menu bar cup icon. Width 360pt, dynamic height 720–1200pt. Layout, top to bottom:</p>
+<ul>
+  <li><strong>Header bar</strong> — "Coffee Run" title + ⚙ Settings icon.</li>
+  <li><strong>Buzz permission banner</strong> — only shown when macOS notifications are denied or not-yet-determined.</li>
+  <li><strong>Hero status card</strong> — illustrated cup + animated steam + dynamic headline ("Brewing with the X crew" / "Looking for coffee company") + breathing status dot.</li>
+  <li><strong>Presence chip</strong> — stacked avatars + warm prose like "Fresh coffee energy nearby" / "Just you for now · Invite a coworker to fill it up".</li>
+  <li><strong>Stats row</strong> — two tiles: <em>Cups brewing with your crew</em> (today) and <em>Coffees sparked by you this week</em> (with streak).</li>
+  <li><strong>Crew filter row</strong> — Picker: "Everyone nearby" or a specific crew.</li>
+  <li><strong>Three big action buttons</strong> — Coffee Run · Available · Heads Down.</li>
+  <li><strong>Run options panel</strong> — appears when Coffee Run is tapped: audience chips + timing chips (Now / In 5 / In 15).</li>
+  <li><strong>Incoming crew invites</strong> — Accept / Decline cards (broadcast over Bonjour).</li>
+  <li><strong>What's happening nearby</strong> — live cards for each active run with joiners and a Join button. Empty state explains the silence.</li>
+  <li><strong>Utility rows</strong> — Caffeinated Mode · Mute for 1 hour · Add note · Invite a coworker · My coffee energy.</li>
+  <li><strong>Bottom section</strong> — Settings · Profile · Quit.</li>
+</ul>
+
+<h3>2.2 Coffee status</h3>
+<table>
+  <tr><th>Status</th><th>Symbol</th><th>What others see</th><th>Auto-expires?</th></tr>
+  <tr><td>Available</td><td>cup outline</td><td>"X is around"</td><td>No</td></tr>
+  <tr><td>Heads Down</td><td>cup outline + red ×</td><td>You don't appear</td><td>No</td></tr>
+  <tr><td>I want coffee</td><td>filled cup</td><td>"X wants coffee"</td><td>Yes (default 30 min)</td></tr>
+  <tr><td>Coffee Run (goingNow)</td><td>filled cup + green →</td><td>"X started a coffee run"</td><td>Yes (auto-logs as cup)</td></tr>
+  <tr><td>Joining</td><td>filled cup + blue 👋</td><td>"X joined Y's run"</td><td>Yes</td></tr>
+</table>
+
+<p>Passive choices (<code>Available</code> / <code>Heads Down</code>) persist across launches. Coffee signals always expire back to the last passive state — Coffee Run never sticks you in "wanting coffee" forever.</p>
+
+<h3>2.3 Coffee runs</h3>
+<p>A run = one organizer + zero or more joiners, all broadcasting the same <code>runID</code> over Bonjour TXT records. Runs can be:</p>
+<ul>
+  <li><strong>Open</strong> — visible to everyone on the local network.</li>
+  <li><strong>Audience-scoped</strong> — broadcast a group ID; only members of that group render the run in their menu.</li>
+  <li><strong>Scheduled</strong> — <code>startsAt</code> in the TXT record drives "Leaving in 5 min" labels.</li>
+</ul>
+<p>When a run expires without being explicitly ended, the app auto-logs one cup for the organizer and any joiners. Logging a cup mid-run ends your participation early and bumps your weekly tally.</p>
+
+<h3>2.4 Crews (groups)</h3>
+<p>Lightweight group abstraction for offices bigger than a small team. Create a crew (Profile &amp; Settings → Crews), invite specific peers, and they receive a system notification + an Accept/Decline card in their menu. Crews are local — joining is a two-party handshake, not a server-mediated membership list.</p>
+
+<h3>2.5 Stats &amp; coffee energy</h3>
+<p>Two values surfaced in the menu:</p>
+<ul>
+  <li><strong>Cups brewing with your crew (today)</strong> — sum of your cups + every visible peer's cups today, broadcast in the TXT record.</li>
+  <li><strong>Coffees sparked by you this week</strong> — your own count, with a fire-emoji day streak when consecutive days have at least one cup.</li>
+</ul>
+<p>Profile &amp; Settings → Profile shows lifetime cups, days active, and the count of people you've ever brewed coffee with nearby.</p>
+
+<h3>2.6 Caffeinated Mode</h3>
+<p>Prevents the display from sleeping using an <code>IOPMAssertion</code> (type <code>kIOPMAssertionTypeNoDisplaySleep</code>). Pure power feature — does not change your coffee status. Indicator: a yellow ⚡ bolt next to the cup in the menu bar.</p>
+
+<h3>2.7 Buzzes (notifications)</h3>
+<p>"Buzz" is the product term for a system notification. Two categories registered with <code>UNUserNotificationCenter</code>:</p>
+<ul>
+  <li><strong>COFFEE_CATEGORY</strong> — actions: Join · Dismiss. Fired when a nearby peer starts a coffee signal.</li>
+  <li><strong>GROUP_INVITE_CATEGORY</strong> — actions: Accept · Decline. Fired when a crew invite targeting you arrives.</li>
+</ul>
+<p>Buzzes are rate-limited to <strong>3 per 10-minute window</strong>, dropped while muted, and can be silenced for 1 hour from a menu row. Custom <code>coffee.caf</code> sound bundled in <code>Resources/</code>.</p>
+
+<h3>2.8 Invite a coworker</h3>
+<p>Top-level menu row that opens a dedicated window with:</p>
+<ul>
+  <li>A high-resolution QR code (CIFilter, 10× oversampled) pointing to the GitHub repo.</li>
+  <li>The link spelled out in monospaced font for read-aloud / typed sharing.</li>
+  <li><strong>Copy link</strong> — writes the URL to the pasteboard with a checkmark confirmation.</li>
+  <li><strong>Share…</strong> — opens <code>NSSharingServicePicker</code> for AirDrop, Mail, Messages, etc.</li>
+</ul>
+
+<h3>2.9 Global hotkey ⌃⌥C</h3>
+<p>Press <span class="kbd">Control</span>+<span class="kbd">Option</span>+<span class="kbd">C</span> anywhere on macOS to start an immediate Coffee Run open to everyone — the menu pops so you can adjust or cancel. Implemented with paired global + local <code>NSEvent</code> monitors; no Accessibility permission required.</p>
+
+<h3>2.10 Demo mode</h3>
+<p>Settings → General → "Try it out" — toggles on a stable fake crew (Maya organizing a run starting in 2 min, Dev joined her, Sara available, Jordan wants coffee). Useful for screenshots, demos, and brand-new users who haven't onboarded coworkers yet. Nothing is broadcast and stats don't change.</p>
+
+<h3>2.11 Steam animations</h3>
+<p>Three procedural steam systems built on <code>TimelineView</code> + <code>Canvas</code>:</p>
+<ul>
+  <li><strong>SteamWisps</strong> — small particles for the hero cup edge.</li>
+  <li><strong>SteamHybrid</strong> — slow expanding cloud body + fast detail particles. Used as the hero cup overlay.</li>
+  <li><strong>SteamRibbons</strong> — two animated bezier S-curves with time-varying control points. Used on stat tiles.</li>
+</ul>
+<p>A full-screen steam overlay fires on personal coffee actions and when someone joins your run. Suppressed while Caffeinated or Muted.</p>
+</section>
+
+<section>
+<h2>3. Architecture at a glance</h2>
+
+<div class="grid">
+  <div class="card">
+    <div class="h">Process model</div>
+    <div class="b">Single SwiftUI <code>App</code> with <code>@NSApplicationDelegateAdaptor</code>. <code>MenuBarExtra</code> renders the menu. <code>LSUIElement=true</code> + <code>.accessory</code> activation policy = no Dock icon by default.</div>
+  </div>
+  <div class="card">
+    <div class="h">State</div>
+    <div class="b">Single <code>AppState: ObservableObject</code> marked <code>@MainActor</code>. Views observe via <code>@EnvironmentObject</code>. All mutations funnel through methods on this class.</div>
+  </div>
+  <div class="card">
+    <div class="h">Services</div>
+    <div class="b">Discrete classes for Bonjour, notifications, sleep, iCloud, QR, and global hotkey. Held by <code>AppState</code> or <code>AppDelegate</code>, never created ad-hoc by views.</div>
+  </div>
+  <div class="card">
+    <div class="h">Persistence</div>
+    <div class="b"><code>UserDefaults</code> via <code>PreferencesStore</code> wrapper. <code>UserProfile</code> serialized as Codable JSON. Optional <code>NSUbiquitousKeyValueStore</code> for cross-Mac sync.</div>
+  </div>
+</div>
+
+<h3>Dependency graph</h3>
+<pre>CoffeeBreakApp (SwiftUI)
+└── AppDelegate ──────────── GlobalHotkey
+    └── AppState ──┬──────── NetworkService (Bonjour)
+                   ├──────── NotificationService
+                   ├──────── SleepBlocker (IOPMAssertion)
+                   ├──────── CloudProfileSync (NSUbiquitousKVS)
+                   ├──────── SteamOverlayController
+                   └──────── PreferencesStore (UserDefaults)
+</pre>
+</section>
+
+<section>
+<h2>4. Networking (Bonjour)</h2>
+
+<p>The whole peer-discovery story is built on Apple's <code>Network.framework</code>. Service type: <code>_coffeebreak._tcp</code>.</p>
+
+<h3>4.1 TXT record schema</h3>
+<p>All per-peer state is broadcast in the Bonjour TXT record. There is no separate TCP channel — peers don't talk to each other directly, they just publish state.</p>
+<table>
+  <tr><th>Key</th><th>Type</th><th>Meaning</th></tr>
+  <tr><td><code>id</code></td><td>UUID string</td><td>Stable peer ID (lives in UserDefaults)</td></tr>
+  <tr><td><code>name</code></td><td>String</td><td>Display name</td></tr>
+  <tr><td><code>status</code></td><td>enum string</td><td>available / notAvailable / wantCoffee / goingNow / joining</td></tr>
+  <tr><td><code>ts</code></td><td>Unix seconds</td><td>When this status was set</td></tr>
+  <tr><td><code>note</code></td><td>String?</td><td>Optional free-text ("kitchen", "lobby")</td></tr>
+  <tr><td><code>run</code></td><td>UUID?</td><td>Run identity — equals <code>id</code> if organizer, points elsewhere if joining</td></tr>
+  <tr><td><code>cups</code></td><td>Int</td><td>Cups logged today (resets at midnight)</td></tr>
+  <tr><td><code>startsAt</code></td><td>Unix seconds?</td><td>Future start time for scheduled runs</td></tr>
+  <tr><td><code>groups</code></td><td>comma UUIDs</td><td>Crews this peer is a member of</td></tr>
+  <tr><td><code>invs</code></td><td>encoded list</td><td>Crew invites this peer is offering</td></tr>
+  <tr><td><code>aud</code></td><td>UUID?</td><td>Audience-scoped run target group</td></tr>
+</table>
+
+<h3>4.2 Discovery flow</h3>
+<ol>
+  <li><code>NWListener</code> publishes our TXT record under <code>_coffeebreak._tcp</code>.</li>
+  <li><code>NWBrowser</code> watches for other peers and emits results.</li>
+  <li>Each result's TXT is parsed into a <code>Peer</code> struct.</li>
+  <li>The combined peer list is published from <code>NetworkService.$peers</code> and observed by <code>AppState</code>.</li>
+  <li>The browse callback uses <code>MainActor.assumeIsolated</code> to keep Swift 6 strict-concurrency happy.</li>
+</ol>
+
+<h3>4.3 What goes wrong on real networks</h3>
+<ul>
+  <li><strong>VLANs:</strong> Same Wi-Fi name does not mean same broadcast domain. Office Wi-Fi often segregates devices — Coffee Run silently shows no peers in that case.</li>
+  <li><strong>Sleep / wake:</strong> Bonjour services re-register on wake; brief gap is expected.</li>
+  <li><strong>Hotel / public Wi-Fi:</strong> Client isolation blocks peer discovery entirely.</li>
+</ul>
+</section>
+
+<section>
+<h2>5. State management</h2>
+
+<p><code>AppState</code> is the single source of truth, marked <code>@MainActor</code>. Views never reach into services directly.</p>
+
+<h3>5.1 Published properties</h3>
+<ul>
+  <li><strong>Identity:</strong> <code>displayName</code>, <code>hasCompletedSetup</code>, <code>ownPeerID</code> (let).</li>
+  <li><strong>Status:</strong> <code>ownStatus</code>, <code>ownNote</code>, <code>statusTimestamp</code>, <code>ownRunID</code>, <code>ownStartsAt</code>, <code>ownAudienceGroupID</code>.</li>
+  <li><strong>Profile:</strong> <code>profile</code> (UserProfile struct).</li>
+  <li><strong>Preferences:</strong> <code>expiryMinutes</code>, <code>notificationsEnabled</code>, <code>soundEnabled</code>, <code>startAtLogin</code>, <code>showSteamForAllSignals</code>, <code>cloudSyncEnabled</code>, <code>demoModeEnabled</code>.</li>
+  <li><strong>Peers:</strong> <code>peers</code>, <code>incomingSignalTick</code> (animation pulse).</li>
+  <li><strong>Power &amp; quiet:</strong> <code>isCaffeinated</code>, <code>mutedUntil</code>.</li>
+  <li><strong>UI hooks:</strong> <code>activeGroupFilter</code>, <code>notificationAuthorizationStatus</code>.</li>
+  <li><strong>Closures wired by AppDelegate:</strong> <code>dismissMenuBar</code>, <code>openSettings</code>, <code>openInvite</code>.</li>
+</ul>
+
+<h3>5.2 Derived state</h3>
+<ul>
+  <li><code>activePeers</code> — peers fresh within the expiry window, merged with demo peers when demo mode is on, filtered by <code>activeGroupFilter</code>.</li>
+  <li><code>activeRuns</code> — organizers visible to us (respecting audience scope), each paired with their visible joiners.</li>
+  <li><code>nearbyCoffeeSeekers</code>, <code>coffeeDrinkerCount</code>, <code>totalCoffeesOnNetwork</code>, <code>pendingIncomingInvites</code>.</li>
+  <li><code>menuBarSymbolName</code>, <code>statusSymbolName</code>, <code>menuBarAccent</code>, <code>menuBarBadgeCount</code> — drive the icon in the menu bar.</li>
+</ul>
+</section>
+
+<section>
+<h2>6. Persistence &amp; iCloud sync</h2>
+
+<h3>6.1 PreferencesStore (UserDefaults)</h3>
+<p>Thin struct wrapping <code>UserDefaults.standard</code>. Notable keys:</p>
+<ul>
+  <li><code>displayName</code>, <code>peerID</code> — identity.</li>
+  <li><code>expiryMinutes</code>, <code>notificationsEnabled</code>, <code>soundEnabled</code>, <code>startAtLogin</code> — prefs.</li>
+  <li><code>userProfile_v1</code> — JSON-encoded <code>UserProfile</code>.</li>
+  <li><code>cloudSyncEnabled</code>, <code>showSteamForAllSignals</code>, <code>demoModeEnabled</code>.</li>
+  <li><code>lastPassiveStatus</code> — the user's last <code>Available</code> / <code>Heads Down</code> choice. Coffee signals always expire to this.</li>
+  <li><code>mutedUntil</code> — Date. Mute survives relaunches.</li>
+</ul>
+
+<h3>6.2 UserProfile + CRDT merge</h3>
+<p>The profile is designed so two Macs syncing the same identity can converge deterministically without a coordinator.</p>
+<ul>
+  <li><code>coffeesByDate: [String: Int]</code> — per-day counts, merged by taking the max per date.</li>
+  <li><code>peopleMet: Set&lt;UUID&gt;</code> — union.</li>
+  <li><code>joinedGroups: [CoffeeGroup]</code> — union by group id.</li>
+  <li><code>declinedGroupInvites: Set&lt;UUID&gt;</code> — union.</li>
+  <li><code>createdAt</code> — minimum.</li>
+  <li><code>displayName</code>, <code>avatarEmoji</code> — last-writer-wins by <code>metadataUpdatedAt</code>.</li>
+</ul>
+<p>Computed: <code>coffeesToday</code>, <code>coffeesThisWeek</code>, <code>weeklyDelta</code>, <code>coffeeStreak</code>, <code>daysActive</code>.</p>
+
+<h3>6.3 iCloud sync</h3>
+<p><code>CloudProfileSync</code> wraps <code>NSUbiquitousKeyValueStore</code>. Saves on every profile mutation when enabled, listens for <code>didChangeExternallyNotification</code> to re-merge remote changes. Requires Developer ID signing to activate — dormant under ad-hoc signing.</p>
+</section>
+
+<section>
+<h2>7. Notifications &amp; rate-limiting</h2>
+
+<h3>7.1 Categories</h3>
+<pre>COFFEE_CATEGORY          → [Join, Dismiss]
+GROUP_INVITE_CATEGORY    → [Accept, Decline]</pre>
+
+<h3>7.2 Delegate routing</h3>
+<p><code>NotificationService</code> conforms to <code>UNUserNotificationCenterDelegate</code>. The <code>didReceive response</code> handler dispatches on (category, action) and invokes one of three callbacks set by <code>AppState</code>:</p>
+<ul>
+  <li><code>onJoin</code> — flips own status to <code>.joining</code> and surfaces the menu.</li>
+  <li><code>onAcceptGroupInvite(inviterID, groupID)</code> — looks up the pending invite and joins the crew.</li>
+  <li><code>onDeclineGroupInvite(inviterID, groupID)</code> — records the decline so future broadcasts of the same invite are dropped.</li>
+</ul>
+
+<h3>7.3 Rate-limiting</h3>
+<ol>
+  <li><strong>Mute</strong> — when <code>mutedUntil &gt; now</code>, all buzzes are dropped silently. Also kills full-screen steam.</li>
+  <li><strong>Window cap</strong> — at most <code>maxNotificationsPerWindow = 3</code> per <code>notificationWindowSeconds = 600</code> (10 min) rolling window. Beyond that, the in-app steam pulse still fires but no system buzz is posted.</li>
+</ol>
+</section>
+
+<section>
+<h2>8. Caffeinated Mode (power)</h2>
+
+<p><code>SleepBlocker</code> wraps a single <code>IOPMAssertion</code>:</p>
+<pre>IOPMAssertionCreateWithName(
+    kIOPMAssertionTypeNoDisplaySleep,
+    IOPMAssertionLevel(kIOPMAssertionLevelOn),
+    "Coffee Run — keeping screen awake" as CFString,
+    &amp;assertionID)</pre>
+<p>Release with <code>IOPMAssertionRelease(assertionID)</code> when toggled off or on app quit. The yellow ⚡ in the menu bar is rendered alongside the cup symbol via the <code>MenuBarExtra</code> label.</p>
+
+<p>The utility row is tap-to-toggle the entire row: putting an interactive <code>Toggle</code> inside a <code>Button</code> swallows the tap, so the toggle inside the row is <code>.constant(...)</code> + <code>.allowsHitTesting(false)</code> — visual indicator only, the button handles the action.</p>
+</section>
+
+<section>
+<h2>9. Invite a coworker (QR &amp; share)</h2>
+
+<h3>9.1 Entry points</h3>
+<ul>
+  <li>Top-level utility row in the menu (always visible).</li>
+  <li>Indirect: the empty "What's happening" state copy mentions "invite a coworker" so the action is discoverable.</li>
+</ul>
+
+<h3>9.2 The sheet</h3>
+<p><code>InviteSheet.swift</code> rendered into a small dedicated <code>NSWindow</code> (340×460pt, titled + closable). Three actions:</p>
+<ul>
+  <li><strong>QR code</strong> — generated by <code>QRCodeGenerator</code> via <code>CIFilter.qrCodeGenerator()</code>, oversampled 10× for crispness, rendered with <code>.interpolation(.none)</code>.</li>
+  <li><strong>Copy link</strong> — writes the URL to <code>NSPasteboard.general</code>, swaps the icon to a checkmark for 1.5s.</li>
+  <li><strong>Share…</strong> — anchored <code>NSSharingServicePicker</code> for AirDrop / Mail / Messages.</li>
+</ul>
+
+<h3>9.3 Link strategy</h3>
+<p>Currently points at <code>github.com/rutasraju/coffee-run</code>. Once a GitHub Release exists, swap to <code>/releases/latest</code> so scanning the QR jumps straight to the DMG download.</p>
+</section>
+
+<section>
+<h2>10. Global hotkey ⌃⌥C</h2>
+
+<p><code>GlobalHotkey.swift</code> registers <em>two</em> event monitors so the hotkey works regardless of which app has focus:</p>
+<ul>
+  <li><code>NSEvent.addGlobalMonitorForEvents(matching: .keyDown)</code> — fires when another app is frontmost.</li>
+  <li><code>NSEvent.addLocalMonitorForEvents(matching: .keyDown)</code> — fires when Coffee Run itself is frontmost (e.g. Settings window). Returns <code>nil</code> to consume the event so AppKit doesn't beep.</li>
+</ul>
+
+<p>Modifier check uses <code>event.modifierFlags.intersection(.deviceIndependentFlagsMask) == [.control, .option]</code>, character match is <code>charactersIgnoringModifiers?.lowercased() == "c"</code>. <strong>No Accessibility permission required</strong> — these monitors observe, they don't inject.</p>
+
+<p>The trigger calls <code>appState.startCoffeeRunFromHotkey()</code>, which:</p>
+<ol>
+  <li>Starts an immediate Coffee Run open to everyone (<code>inMinutes: 0, audience: nil</code>).</li>
+  <li>Activates the app so the menu pops, giving the user a chance to cancel or adjust.</li>
+</ol>
+</section>
+
+<section>
+<h2>11. Demo mode</h2>
+
+<p>Off by default. When enabled (Settings → General → "Try it out"), <code>AppState.refreshDemoPeers()</code> populates four synthetic peers with stable UUIDs:</p>
+<ul>
+  <li><strong>Maya P.</strong> — organizing a run starting in 2 min, note "Meet at kitchen".</li>
+  <li><strong>Dev R.</strong> — already joined Maya's run.</li>
+  <li><strong>Sara K.</strong> — available, has 2 cups logged today.</li>
+  <li><strong>Jordan L.</strong> — wants coffee, note "lobby?".</li>
+</ul>
+
+<p>Demo peers are merged into <code>activePeers</code> via a computed property — real <code>peers</code> state is untouched, nothing is broadcast, and stats don't accumulate. Stable UUIDs ensure the avatar colors (deterministic from name+id hash) don't shuffle when you toggle the mode on and off.</p>
+</section>
+
+<section>
+<h2>12. Steam animations</h2>
+
+<table>
+  <tr><th>System</th><th>File</th><th>Used for</th><th>Cost</th></tr>
+  <tr><td>SteamWisps</td><td><span class="filepath">Views/SteamWisps.swift</span></td><td>Small accents (welcome screen, fallback cup symbol)</td><td>2–3 particles</td></tr>
+  <tr><td>SteamHybrid</td><td><span class="filepath">Views/SteamHybrid.swift</span></td><td>Hero cup overlay — slow expanding cloud + fast detail</td><td>5 body + 7 detail particles, blur 0.7</td></tr>
+  <tr><td>SteamRibbons</td><td><span class="filepath">Views/SteamRibbons.swift</span></td><td>Stat tile cup graphics</td><td>2 bezier S-curves, gradient stroke</td></tr>
+  <tr><td>Full-screen steam</td><td><span class="filepath">Services/SteamOverlay…</span></td><td>Celebration on personal action / run join</td><td>Transparent NSWindow, ~13s loop</td></tr>
+</table>
+
+<p>All systems are <code>TimelineView</code>-driven, with per-particle pseudorandom seeds for phase, speed, sway, and size jitter. The combination is what makes the steam read as natural rather than mechanical.</p>
+</section>
+
+<section>
+<h2>13. Privacy model</h2>
+<ul>
+  <li><strong>No accounts.</strong> Identity is a UUID generated on first launch and stored in <code>UserDefaults</code>.</li>
+  <li><strong>No servers.</strong> All discovery is via Bonjour on the local subnet.</li>
+  <li><strong>No analytics.</strong> Nothing is reported to any third party.</li>
+  <li><strong>iCloud sync is opt-in</strong> and only carries the local <code>UserProfile</code> (cups, people met, crews) — never live status.</li>
+  <li><strong>System notifications</strong> are local-only and respect macOS's permission model.</li>
+</ul>
+<p>Marketing copy across the app reinforces this: footer reads "Only visible to your crew nearby."</p>
+</section>
+
+<section>
+<h2>14. File map</h2>
+
+<h4>App entry</h4>
+<ul>
+  <li><span class="filepath">CoffeeBreak/CoffeeBreakApp.swift</span> — <code>@main</code>, <code>MenuBarExtra</code>, label closure (inlined HStack — nested struct labels break click handling).</li>
+  <li><span class="filepath">CoffeeBreak/Info.plist</span> — <code>LSUIElement=true</code>, bundle metadata.</li>
+  <li><span class="filepath">CoffeeBreak/CoffeeBreak.entitlements</span> — entitlements for distribution.</li>
+</ul>
+
+<h4>Services</h4>
+<ul>
+  <li><span class="filepath">Services/AppDelegate.swift</span> — owns AppState, settings window, invite window, global hotkey wiring.</li>
+  <li><span class="filepath">Services/NetworkService.swift</span> — Bonjour publish + browse, TXT encode/decode.</li>
+  <li><span class="filepath">Services/NotificationService.swift</span> — UN categories, delegate, test buzz.</li>
+  <li><span class="filepath">Services/PreferencesStore.swift</span> — UserDefaults wrapper.</li>
+  <li><span class="filepath">Services/SleepBlocker.swift</span> — IOPMAssertion wrapper.</li>
+  <li><span class="filepath">Services/CloudProfileSync.swift</span> — NSUbiquitousKeyValueStore wrapper.</li>
+  <li><span class="filepath">Services/GlobalHotkey.swift</span> — ⌃⌥C event monitors.</li>
+  <li><span class="filepath">Services/QRCodeGenerator.swift</span> — CIFilter QR helper.</li>
+</ul>
+
+<h4>Models</h4>
+<ul>
+  <li><span class="filepath">Models/Peer.swift</span> — over-the-wire peer struct.</li>
+  <li><span class="filepath">Models/CoffeeRun.swift</span> — organizer + joiners.</li>
+  <li><span class="filepath">Models/CoffeeGroup.swift</span> — crew + invite types.</li>
+  <li><span class="filepath">Models/UserProfile.swift</span> — Codable, CRDT merge.</li>
+  <li><span class="filepath">Models/CoffeeStatus.swift</span> — enum + symbols.</li>
+</ul>
+
+<h4>State</h4>
+<ul>
+  <li><span class="filepath">State/AppState.swift</span> — the brain.</li>
+</ul>
+
+<h4>Views</h4>
+<ul>
+  <li><span class="filepath">Views/MenuContentView.swift</span> — main menu (the big one).</li>
+  <li><span class="filepath">Views/WelcomeView.swift</span> — first-run name entry.</li>
+  <li><span class="filepath">Views/PreferencesView.swift</span> — settings tabs.</li>
+  <li><span class="filepath">Views/GroupsSettingsView.swift</span> — crew management.</li>
+  <li><span class="filepath">Views/RunCard.swift</span> — small run card variant.</li>
+  <li><span class="filepath">Views/InviteSheet.swift</span> — QR + share window.</li>
+  <li><span class="filepath">Views/SteamHybrid.swift</span> — hero steam.</li>
+  <li><span class="filepath">Views/SteamRibbons.swift</span> — stat-tile steam.</li>
+  <li><span class="filepath">Views/SteamWisps.swift</span> — small steam accents.</li>
+  <li><span class="filepath">Views/ChipFlowLayout.swift</span> — wrapping chip layout.</li>
+</ul>
+
+<h4>Resources</h4>
+<ul>
+  <li><span class="filepath">Resources/coffee.caf</span> — buzz sound.</li>
+  <li><span class="filepath">Resources/coffeerun_herobig.png</span> + @2x + @3x — hero illustration.</li>
+  <li><span class="filepath">Resources/coffeerun_spark.png</span> + @2x + @3x — personal-tile illustration.</li>
+  <li><span class="filepath">Resources/AppIcon.icns</span> — app icon.</li>
+</ul>
+</section>
+
+<section>
+<h2>15. Build, sign &amp; distribute</h2>
+
+<h3>15.1 SwiftPM build</h3>
+<pre>swift build -c release</pre>
+<p>Output: <code>.build/release/CoffeeBreak</code> — a Mach-O executable, not a bundle.</p>
+
+<h3>15.2 Bundle assembly</h3>
+<p><code>Coffee Run.app</code> is hand-assembled (no Xcode build phase). The flow:</p>
+<pre>cp .build/release/CoffeeBreak "Coffee Run.app/Contents/MacOS/CoffeeBreak"
+codesign --force --deep --sign - "Coffee Run.app"</pre>
+<p>Ad-hoc signing (<code>--sign -</code>) lets the app run locally without a Developer ID. iCloud sync stays dormant under ad-hoc — needs a real team signature to activate.</p>
+
+<h3>15.3 DMG</h3>
+<pre>mkdir dmg-staging
+cp -R "Coffee Run.app" dmg-staging/
+ln -s /Applications dmg-staging/Applications
+hdiutil create -volname "Coffee Run" \
+  -srcfolder dmg-staging -ov -format UDZO "Coffee Run.dmg"</pre>
+<p>Result: ~6.4 MB self-contained installer.</p>
+
+<h3>15.4 Distribution paths</h3>
+<table>
+  <tr><th>Path</th><th>Pros</th><th>Cons</th></tr>
+  <tr><td>Direct DMG (current)</td><td>Zero infra, instant updates</td><td>Gatekeeper warning on first open without notarization</td></tr>
+  <tr><td>Notarized + Developer ID</td><td>Clean install, iCloud sync activates</td><td>Requires Apple Developer Program ($99/yr)</td></tr>
+  <tr><td>Mac App Store</td><td>One-click install, auto-updates, surface area</td><td>Sandbox restrictions, review cycle</td></tr>
+</table>
+</section>
+
+<section>
+<h2>16. Roadmap</h2>
+
+<h3>Shipped</h3>
+<ul>
+  <li>v1.0 — status + crews + stats + Caffeinated Mode + iCloud sync hook + full-screen steam</li>
+  <li>v1.1 — Invite sheet (QR + share), global hotkey ⌃⌥C, demo mode, onboarding empty state</li>
+</ul>
+
+<h3>Phase B — Invite (deep-link)</h3>
+<p>Replace the GitHub link with <code>coffeerun://join?crew=…</code> deep-link that auto-joins a specific crew on first launch. Requires URL scheme registration in Info.plist + handler in AppDelegate.</p>
+
+<h3>Phase C — Coffee roulette</h3>
+<p>Opt-in matchmaking inside crews, falling back to anyone nearby. Surfaces a daily "you and Maya haven't had coffee yet — try now?" prompt.</p>
+
+<h3>Phase D — Rhythm nudges</h3>
+<p>Learn the user's usual coffee times from <code>UserProfile.coffeesByDate</code> + timestamps, fire a subtle menu-bar pulse at predicted times. Optional weekly summary card.</p>
+
+<h3>Phase E — Calendar awareness</h3>
+<p>EventKit permission. When the user taps Join on a run and a meeting starts within 10 min, soften the button to a confirmation prompt.</p>
+</section>
+
+<div class="footer">
+  Coffee Run · v1.1 reference · © 2026 · Built with SwiftUI &amp; AppKit on macOS 13+. Only visible to your crew nearby.
+</div>
+
+</body>
+</html>
