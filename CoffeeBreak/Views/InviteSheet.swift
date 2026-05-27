@@ -10,8 +10,8 @@ import AppKit
 struct InviteSheet: View {
     @EnvironmentObject var appState: AppState
 
-    /// Where the QR + copyable link point. Update once Releases are live.
-    private let inviteURL = "https://github.com/rutasraju/coffee-run"
+    /// Where the QR + copyable link point.
+    private let inviteURL = "https://coffee-run-landing-page.vercel.app"
     private let qrPixelSize: CGFloat = 180
 
     @State private var copied = false
