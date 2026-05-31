@@ -22,6 +22,12 @@ final class NotificationService: NSObject, UNUserNotificationCenterDelegate {
 
     override init() {
         super.init()
+        // UNUserNotificationCenter requires a live bundle proxy.
+        // When run as a bare binary (e.g. Xcode launches the executable directly
+        // instead of the .app bundle), bundleProxyForCurrentProcess is nil and
+        // any call to UNUserNotificationCenter.current() throws a fatal exception.
+        // Guard by checking that we're actually inside an .app bundle.
+        guard Bundle.main.bundleURL.pathExtension == "app" else { return }
         let center = UNUserNotificationCenter.current()
         center.delegate = self
         registerCategory()
