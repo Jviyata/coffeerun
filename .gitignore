@@ -23,3 +23,6 @@ dmg-staging/
 
 # Generated icons (kept in repo via AppIcon.iconset, regenerable)
 # Keep AppIcon.icns and AppIcon.iconset — they're assets, not build artifacts
+
+# Claude Code local settings
+.claude/
