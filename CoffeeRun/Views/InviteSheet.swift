@@ -2,7 +2,7 @@ import SwiftUI
 import AppKit
 
 /// Standalone "Invite a coworker" panel — opened from the menu's utility
-/// row or its empty state. Shows a QR + a copyable link to the Coffee Run
+/// row or its empty state. Shows a QR + a copyable link to the Brwup
 /// download page, with a system share button as the fast path.
 ///
 /// V1 points at the GitHub repo. Once we cut a Release, switch to the
@@ -35,7 +35,7 @@ struct InviteSheet: View {
             HStack(spacing: 6) {
                 Image(systemName: "person.crop.circle.badge.plus")
                     .foregroundStyle(Color.accentColor)
-                Text("Bring a coworker to Coffee Run")
+                Text("Bring a coworker to Brwup")
                     .font(.system(size: 15, weight: .bold))
             }
             Text("They install, open the app, and they'll show up next to you in your crew.")

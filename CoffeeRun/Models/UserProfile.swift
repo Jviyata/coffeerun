@@ -82,7 +82,7 @@ struct UserProfile: Codable, Equatable {
     }
 
     /// Streak of consecutive days on which we sparked at least one cup —
-    /// i.e. organized a coffee run that resulted in someone (us or a joiner)
+    /// i.e. organized a Brwup that resulted in someone (us or a joiner)
     /// having a coffee. This is what the personal tile shows.
     var sparkedStreak: Int {
         Self.streakLength(in: sparkedByDate)

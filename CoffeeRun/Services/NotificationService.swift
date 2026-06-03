@@ -50,7 +50,7 @@ final class NotificationService: NSObject, UNUserNotificationCenterDelegate {
     func notifyGroupInvite(_ invite: BroadcastInvite, sound: Bool) {
         let content = UNMutableNotificationContent()
         content.title = "\(invite.inviterName) invited you to \(invite.groupName)"
-        content.body = "Accept to start seeing this group's coffee runs."
+        content.body = "Accept to start seeing this group's Brwups."
         content.categoryIdentifier = Self.groupInviteCategoryID
         // Stash the IDs in userInfo so the delegate callback knows
         // which invite the action applies to.
@@ -71,7 +71,7 @@ final class NotificationService: NSObject, UNUserNotificationCenterDelegate {
 
     func sendTestNotification(sound: Bool) {
         let content = UNMutableNotificationContent()
-        content.title = "Coffee Run test buzz ☕"
+        content.title = "Brwup test buzz ☕"
         content.body = "Looks like buzzes are working."
         content.categoryIdentifier = Self.coffeeCategoryID
         if sound {
@@ -86,7 +86,7 @@ final class NotificationService: NSObject, UNUserNotificationCenterDelegate {
     }
 
     private func registerCategory() {
-        // Coffee Run notifications: Join / Dismiss
+        // Brwup notifications: Join / Dismiss
         let join = UNNotificationAction(
             identifier: Self.joinActionID,
             title: "Join",
@@ -138,7 +138,7 @@ final class NotificationService: NSObject, UNUserNotificationCenterDelegate {
         if let note = peer.note, !note.isEmpty {
             content.body = note
         } else {
-            content.body = "Open Coffee Run to join."
+            content.body = "Open Brwup to join."
         }
         content.categoryIdentifier = Self.coffeeCategoryID
         if sound {

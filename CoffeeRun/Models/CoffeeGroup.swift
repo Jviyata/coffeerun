@@ -1,6 +1,6 @@
 import Foundation
 
-/// A persistent group you can have coffee runs with. Each member has its
+/// A persistent group you can have Brwups with. Each member has its
 /// own copy in their `UserProfile.joinedGroups`. Membership is whoever
 /// currently broadcasts the group's ID — there's no admin server.
 struct CoffeeGroup: Codable, Identifiable, Hashable {

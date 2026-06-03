@@ -22,7 +22,7 @@ struct PreferencesStore {
     }
 
     /// When on, the menu shows a small set of fake coworkers + a sample
-    /// coffee run so a brand-new user can see what a populated office looks
+    /// Brwup so a brand-new user can see what a populated office looks
     /// like. Purely cosmetic — nothing is broadcast and no stats change.
     var demoModeEnabled: Bool {
         get { defaults.bool(forKey: Keys.demoModeEnabled) }
@@ -176,7 +176,7 @@ struct PreferencesStore {
                     try SMAppService.mainApp.unregister()
                 }
             } catch {
-                print("CoffeeBreak login item toggle failed: \(error)")
+                print("CoffeeRun login item toggle failed: \(error)")
             }
         }
     }

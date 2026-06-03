@@ -9,7 +9,7 @@ final class SleepBlocker {
     private(set) var isActive: Bool = false
 
     /// Acquire a no-display-sleep assertion. Idempotent.
-    func enable(reason: String = "Coffee Run — Caffeinated mode") {
+    func enable(reason: String = "Brwup — Caffeinated mode") {
         guard !isActive else { return }
         var newID: IOPMAssertionID = 0
         let result = IOPMAssertionCreateWithName(

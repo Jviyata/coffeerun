@@ -9,76 +9,76 @@
 /* Begin PBXBuildFile section */
 		00EB7E087BFE35E9D1F5EC28 /* PreferencesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5355423CEC833220A39B2FFE /* PreferencesStore.swift */; };
 		01E9D94096D86431EEADAEED /* MenuContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AA8067FADBE07DD83E4B4D /* MenuContentView.swift */; };
+		0445E43FDEF94D7696878BB2 /* CoffeeGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338C47C0D7A94B5C85F49FEE /* CoffeeGroup.swift */; };
+		113F63F645524EA0A1266ABB /* InviteSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972C0DE63EB241AABC8A8351 /* InviteSheet.swift */; };
+		1B6174FC5365447FBB26D9B6 /* SteamHybrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B68DCB33134879A6E21364 /* SteamHybrid.swift */; };
+		215F036960264C1A8C70E3C6 /* QRCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E5812A81FA4FDD9C51E9D1 /* QRCodeGenerator.swift */; };
 		29232AEB5BF5F26EEF6B38C7 /* PeerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E905E514E4FAF8C5CFFD9 /* PeerRow.swift */; };
+		3188E174D14B46B4A6CC488B /* coffeerun_herobig@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BFAF89111B040F8BEFFDB32 /* coffeerun_herobig@2x.png */; };
+		37F24CB213034B1C9E1CBE84 /* CoffeeStatusIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F0C64267CD4EC48AED45E5 /* CoffeeStatusIcon.swift */; };
 		481F9529F4A927DCBD3068E3 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AAD63EEB0E278499F8B405 /* WelcomeView.swift */; };
-		6F46EA49EF6C1D15193102CE /* CoffeeBreakApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D4A183E234B62EE8BBEE /* CoffeeBreakApp.swift */; };
+		57CDB8E491F145BA8E3EF7E9 /* SleepBlocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F769AADD5E484D888A8B09E4 /* SleepBlocker.swift */; };
+		5EE9E6D568DF4955AC19B3DE /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25771CF89964C80B6AB9A13 /* UserProfile.swift */; };
+		689F05FABB114BB79FCB6388 /* SteamWisps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D4A58F8D8243B7AAF3231D /* SteamWisps.swift */; };
+		69FC436D16344F50B0550318 /* CoffeeStatsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C693A41C3D4F4D9888D60A13 /* CoffeeStatsCard.swift */; };
+		6F46EA49EF6C1D15193102CE /* CoffeeRunApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D4A183E234B62EE8BBEE /* CoffeeRunApp.swift */; };
 		709C2291A7E4CCDE92075C6C /* Peer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CFA92103E80B4953E16ED3 /* Peer.swift */; };
+		7218E2AD48F846E481DD7C91 /* SteamRibbons.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7064AC3276C4C259166050E /* SteamRibbons.swift */; };
+		84FB9700D68E4F818B02AE83 /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = F012A0C95886434EBD9EF088 /* AppIcon.icns */; };
 		89446C7D16BED3F4F2C5E109 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E6615C6C15530EE545BE4D /* NetworkService.swift */; };
 		8FB97ABCA148DCB548DDFF1C /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402680839EE38E2A634871CB /* PreferencesView.swift */; };
 		A016E42B4D031D1A71EF7EED /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453BA1278AB74157B8B6375 /* AppState.swift */; };
-		F9A2BE75B275FD355381028B /* CoffeeStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E35B28AF855D4A00E27A98 /* CoffeeStatus.swift */; };
-		FF05DBD062C5EBC2081D15D4 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D86AA8801A9F098FC2605D /* NotificationService.swift */; };
-		0445E43FDEF94D7696878BB2 /* CoffeeGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338C47C0D7A94B5C85F49FEE /* CoffeeGroup.swift */; };
+		B1479EE5EA474769AE5FFB43 /* GlobalHotkey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E272F7451455F81036C93 /* GlobalHotkey.swift */; };
 		BA837581AE3A4890AD858112 /* CoffeeRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5F2DF3C7A54D24A1F88A45 /* CoffeeRun.swift */; };
-		5EE9E6D568DF4955AC19B3DE /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25771CF89964C80B6AB9A13 /* UserProfile.swift */; };
+		BD9C09DDB7394425870713A7 /* coffee.caf in Resources */ = {isa = PBXBuildFile; fileRef = 2444CF80597248AAAD08074E /* coffee.caf */; };
+		C6C710317B5348498931FB2F /* GroupsSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D379B736D94740A6D222DD /* GroupsSettingsView.swift */; };
 		C8D270294F1740DD85559789 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37337B8593B044CFA04D5764 /* AppDelegate.swift */; };
 		D44EA7E986784E868B3AB5D7 /* CloudProfileSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86CD0FFD821432E95A7FAD5 /* CloudProfileSync.swift */; };
-		B1479EE5EA474769AE5FFB43 /* GlobalHotkey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E272F7451455F81036C93 /* GlobalHotkey.swift */; };
-		215F036960264C1A8C70E3C6 /* QRCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E5812A81FA4FDD9C51E9D1 /* QRCodeGenerator.swift */; };
-		57CDB8E491F145BA8E3EF7E9 /* SleepBlocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F769AADD5E484D888A8B09E4 /* SleepBlocker.swift */; };
 		DCC3746A5BCB47599AC6D4FF /* ChipFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540627C3D0A94D18B79D2158 /* ChipFlowLayout.swift */; };
-		69FC436D16344F50B0550318 /* CoffeeStatsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C693A41C3D4F4D9888D60A13 /* CoffeeStatsCard.swift */; };
-		37F24CB213034B1C9E1CBE84 /* CoffeeStatusIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F0C64267CD4EC48AED45E5 /* CoffeeStatusIcon.swift */; };
-		C6C710317B5348498931FB2F /* GroupsSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D379B736D94740A6D222DD /* GroupsSettingsView.swift */; };
-		113F63F645524EA0A1266ABB /* InviteSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972C0DE63EB241AABC8A8351 /* InviteSheet.swift */; };
-		1B6174FC5365447FBB26D9B6 /* SteamHybrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B68DCB33134879A6E21364 /* SteamHybrid.swift */; };
+		ED8E9A03CA1B4FCA85D08BDE /* coffeerun_herobig@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 35B92FD78FB04DD9A0699BCB /* coffeerun_herobig@3x.png */; };
 		F688CDEFDC5A48F2A4A4285F /* SteamOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34CB95E09804ECE9E5D5DFD /* SteamOverlay.swift */; };
-		7218E2AD48F846E481DD7C91 /* SteamRibbons.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7064AC3276C4C259166050E /* SteamRibbons.swift */; };
-		689F05FABB114BB79FCB6388 /* SteamWisps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D4A58F8D8243B7AAF3231D /* SteamWisps.swift */; };
-		BD9C09DDB7394425870713A7 /* coffee.caf in Resources */ = {isa = PBXBuildFile; fileRef = 2444CF80597248AAAD08074E /* coffee.caf */; };
 		F80439F9BA854F13A92DD53D /* coffeerun_herobig.png in Resources */ = {isa = PBXBuildFile; fileRef = A0CCB9CB49DC42D09718C35A /* coffeerun_herobig.png */; };
-		3188E174D14B46B4A6CC488B /* "coffeerun_herobig@2x.png" in Resources */ = {isa = PBXBuildFile; fileRef = 3BFAF89111B040F8BEFFDB32 /* "coffeerun_herobig@2x.png" */; };
-		ED8E9A03CA1B4FCA85D08BDE /* "coffeerun_herobig@3x.png" in Resources */ = {isa = PBXBuildFile; fileRef = 35B92FD78FB04DD9A0699BCB /* "coffeerun_herobig@3x.png" */; };
-		84FB9700D68E4F818B02AE83 /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = F012A0C95886434EBD9EF088 /* AppIcon.icns */; };
+		F9A2BE75B275FD355381028B /* CoffeeStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E35B28AF855D4A00E27A98 /* CoffeeStatus.swift */; };
+		FF05DBD062C5EBC2081D15D4 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D86AA8801A9F098FC2605D /* NotificationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10B68DCB33134879A6E21364 /* SteamHybrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamHybrid.swift; sourceTree = "<group>"; };
+		2444CF80597248AAAD08074E /* coffee.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = coffee.caf; sourceTree = "<group>"; };
 		2453BA1278AB74157B8B6375 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		338C47C0D7A94B5C85F49FEE /* CoffeeGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeGroup.swift; sourceTree = "<group>"; };
+		35B92FD78FB04DD9A0699BCB /* coffeerun_herobig@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coffeerun_herobig@3x.png"; sourceTree = "<group>"; };
+		37337B8593B044CFA04D5764 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3BFAF89111B040F8BEFFDB32 /* coffeerun_herobig@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coffeerun_herobig@2x.png"; sourceTree = "<group>"; };
 		402680839EE38E2A634871CB /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
-		4A32D4A183E234B62EE8BBEE /* CoffeeBreakApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBreakApp.swift; sourceTree = "<group>"; };
+		4A32D4A183E234B62EE8BBEE /* CoffeeRunApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeRunApp.swift; sourceTree = "<group>"; };
 		5355423CEC833220A39B2FFE /* PreferencesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesStore.swift; sourceTree = "<group>"; };
+		540627C3D0A94D18B79D2158 /* ChipFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipFlowLayout.swift; sourceTree = "<group>"; };
+		57E5812A81FA4FDD9C51E9D1 /* QRCodeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeGenerator.swift; sourceTree = "<group>"; };
+		61D4A58F8D8243B7AAF3231D /* SteamWisps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamWisps.swift; sourceTree = "<group>"; };
 		61E6615C6C15530EE545BE4D /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		63AAD63EEB0E278499F8B405 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		80D86AA8801A9F098FC2605D /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
-		9CD7C54B12C799C2EF3FFEE7 /* CoffeeBreak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeBreak.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B1E35B28AF855D4A00E27A98 /* CoffeeStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeStatus.swift; sourceTree = "<group>"; };
-		B30E905E514E4FAF8C5CFFD9 /* PeerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerRow.swift; sourceTree = "<group>"; };
-		B8AA8067FADBE07DD83E4B4D /* MenuContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuContentView.swift; sourceTree = "<group>"; };
-		BD8DD012EB416358FFE48913 /* CoffeeBreak.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoffeeBreak.entitlements; sourceTree = "<group>"; };
-		CE6C1C9FBE704E9769DB86AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E9CFA92103E80B4953E16ED3 /* Peer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Peer.swift; sourceTree = "<group>"; };
-		338C47C0D7A94B5C85F49FEE /* CoffeeGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeGroup.swift; sourceTree = "<group>"; };
-		EA5F2DF3C7A54D24A1F88A45 /* CoffeeRun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeRun.swift; sourceTree = "<group>"; };
-		D25771CF89964C80B6AB9A13 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
-		37337B8593B044CFA04D5764 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D86CD0FFD821432E95A7FAD5 /* CloudProfileSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudProfileSync.swift; sourceTree = "<group>"; };
-		EA0E272F7451455F81036C93 /* GlobalHotkey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalHotkey.swift; sourceTree = "<group>"; };
-		57E5812A81FA4FDD9C51E9D1 /* QRCodeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeGenerator.swift; sourceTree = "<group>"; };
-		F769AADD5E484D888A8B09E4 /* SleepBlocker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepBlocker.swift; sourceTree = "<group>"; };
-		540627C3D0A94D18B79D2158 /* ChipFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipFlowLayout.swift; sourceTree = "<group>"; };
-		C693A41C3D4F4D9888D60A13 /* CoffeeStatsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeStatsCard.swift; sourceTree = "<group>"; };
 		94F0C64267CD4EC48AED45E5 /* CoffeeStatusIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeStatusIcon.swift; sourceTree = "<group>"; };
 		96D379B736D94740A6D222DD /* GroupsSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsSettingsView.swift; sourceTree = "<group>"; };
 		972C0DE63EB241AABC8A8351 /* InviteSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteSheet.swift; sourceTree = "<group>"; };
-		10B68DCB33134879A6E21364 /* SteamHybrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamHybrid.swift; sourceTree = "<group>"; };
+		9CD7C54B12C799C2EF3FFEE7 /* CoffeeRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0CCB9CB49DC42D09718C35A /* coffeerun_herobig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffeerun_herobig.png; sourceTree = "<group>"; };
 		A34CB95E09804ECE9E5D5DFD /* SteamOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamOverlay.swift; sourceTree = "<group>"; };
 		A7064AC3276C4C259166050E /* SteamRibbons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamRibbons.swift; sourceTree = "<group>"; };
-		61D4A58F8D8243B7AAF3231D /* SteamWisps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamWisps.swift; sourceTree = "<group>"; };
-		2444CF80597248AAAD08074E /* coffee.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = coffee.caf; sourceTree = "<group>"; };
-		A0CCB9CB49DC42D09718C35A /* coffeerun_herobig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffeerun_herobig.png; sourceTree = "<group>"; };
-		3BFAF89111B040F8BEFFDB32 /* "coffeerun_herobig@2x.png" */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coffeerun_herobig@2x.png"; sourceTree = "<group>"; };
-		35B92FD78FB04DD9A0699BCB /* "coffeerun_herobig@3x.png" */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coffeerun_herobig@3x.png"; sourceTree = "<group>"; };
+		B1E35B28AF855D4A00E27A98 /* CoffeeStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeStatus.swift; sourceTree = "<group>"; };
+		B30E905E514E4FAF8C5CFFD9 /* PeerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerRow.swift; sourceTree = "<group>"; };
+		B8AA8067FADBE07DD83E4B4D /* MenuContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuContentView.swift; sourceTree = "<group>"; };
+		BD8DD012EB416358FFE48913 /* CoffeeRun.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoffeeRun.entitlements; sourceTree = "<group>"; };
+		C693A41C3D4F4D9888D60A13 /* CoffeeStatsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeStatsCard.swift; sourceTree = "<group>"; };
+		CE6C1C9FBE704E9769DB86AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D25771CF89964C80B6AB9A13 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		D86CD0FFD821432E95A7FAD5 /* CloudProfileSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudProfileSync.swift; sourceTree = "<group>"; };
+		E9CFA92103E80B4953E16ED3 /* Peer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Peer.swift; sourceTree = "<group>"; };
+		EA0E272F7451455F81036C93 /* GlobalHotkey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalHotkey.swift; sourceTree = "<group>"; };
+		EA5F2DF3C7A54D24A1F88A45 /* CoffeeRun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeRun.swift; sourceTree = "<group>"; };
 		F012A0C95886434EBD9EF088 /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AppIcon.icns; sourceTree = "<group>"; };
+		F769AADD5E484D888A8B09E4 /* SleepBlocker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepBlocker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +95,7 @@
 		2002DF107CCEB367A8083E6A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9CD7C54B12C799C2EF3FFEE7 /* CoffeeBreak.app */,
+				9CD7C54B12C799C2EF3FFEE7 /* CoffeeRun.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -155,61 +155,84 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		A0E4496DEA9B4DA89CFABB5A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2444CF80597248AAAD08074E /* coffee.caf */,
+				A0CCB9CB49DC42D09718C35A /* coffeerun_herobig.png */,
+				3BFAF89111B040F8BEFFDB32 /* coffeerun_herobig@2x.png */,
+				35B92FD78FB04DD9A0699BCB /* coffeerun_herobig@3x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		F400ED860DAE16A57B7AA626 = {
 			isa = PBXGroup;
 			children = (
-				FA02CD8EA1D65A53558DF404 /* CoffeeBreak */,
+				FA02CD8EA1D65A53558DF404 /* CoffeeRun */,
 				F012A0C95886434EBD9EF088 /* AppIcon.icns */,
 				2002DF107CCEB367A8083E6A /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		FA02CD8EA1D65A53558DF404 /* CoffeeBreak */ = {
+		FA02CD8EA1D65A53558DF404 /* CoffeeRun */ = {
 			isa = PBXGroup;
 			children = (
-				4A32D4A183E234B62EE8BBEE /* CoffeeBreakApp.swift */,
+				4A32D4A183E234B62EE8BBEE /* CoffeeRunApp.swift */,
 				37BC97488DB09DA24AD05D16 /* Models */,
 				671221E6A52E62B8698DBD10 /* Services */,
 				57B89F34C190801E55E73DD5 /* State */,
 				8CF736A49654C86CE6123D56 /* Views */,
 				A0E4496DEA9B4DA89CFABB5A /* Resources */,
 				CE6C1C9FBE704E9769DB86AB /* Info.plist */,
-				BD8DD012EB416358FFE48913 /* CoffeeBreak.entitlements */,
+				BD8DD012EB416358FFE48913 /* CoffeeRun.entitlements */,
 			);
-			path = CoffeeBreak;
-			sourceTree = "<group>";
-		};
-		A0E4496DEA9B4DA89CFABB5A /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				2444CF80597248AAAD08074E /* coffee.caf */,
-				A0CCB9CB49DC42D09718C35A /* coffeerun_herobig.png */,
-				3BFAF89111B040F8BEFFDB32 /* "coffeerun_herobig@2x.png" */,
-				35B92FD78FB04DD9A0699BCB /* "coffeerun_herobig@3x.png" */,
-			);
-			path = Resources;
+			path = CoffeeRun;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		66E0DE4D96B256059A21FDE1 /* CoffeeBreak */ = {
+		66E0DE4D96B256059A21FDE1 /* CoffeeRun */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7D2A15A8957DB8F6C13353C6 /* Build configuration list for PBXNativeTarget "CoffeeBreak" */;
+			buildConfigurationList = 7D2A15A8957DB8F6C13353C6 /* Build configuration list for PBXNativeTarget "CoffeeRun" */;
 			buildPhases = (
 				993491A8BEA8D8C88EB30C33 /* Sources */,
 				FDD544A12142FE8A4F24ADCB /* Frameworks */,
 				30479110A87F8A66F73B4E1C /* Resources */,
+				67332EDDC4FB49E8B4F019F7 /* Strip extended attributes */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = CoffeeBreak;
-			productName = CoffeeBreak;
-			productReference = 9CD7C54B12C799C2EF3FFEE7 /* CoffeeBreak.app */;
+			name = CoffeeRun;
+			productName = CoffeeRun;
+			productReference = 9CD7C54B12C799C2EF3FFEE7 /* CoffeeRun.app */;
 			productType = "com.apple.product-type.application";
 		};
+
+/* Begin PBXShellScriptBuildPhase section */
+		67332EDDC4FB49E8B4F019F7 /* Strip xattrs before codesign */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Strip extended attributes";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Strip attrs from the bundle dir itself (FinderInfo is the codesign killer)\nxattr -d com.apple.FinderInfo \"${CODESIGNING_FOLDER_PATH}\" 2>/dev/null || true\nxattr -d com.apple.quarantine \"${CODESIGNING_FOLDER_PATH}\" 2>/dev/null || true\nattrs=$(xattr \"${CODESIGNING_FOLDER_PATH}\" 2>/dev/null)\nif [ -n \"$attrs\" ]; then\n  echo \"$attrs\" | while read a; do xattr -d \"$a\" \"${CODESIGNING_FOLDER_PATH}\" 2>/dev/null || true; done\nfi\n# Strip all dirs inside the bundle\nfind \"${CODESIGNING_FOLDER_PATH}\" -type d | while IFS= read -r d; do\n  xattr -c \"$d\" 2>/dev/null || true\ndone\n# Strip all files inside the bundle\nfind \"${CODESIGNING_FOLDER_PATH}\" -type f | while IFS= read -r f; do\n  xattr -c \"$f\" 2>/dev/null || true\n  if [ -n \"$(xattr \"$f\" 2>/dev/null)\" ]; then\n    ditto --norsrc \"$f\" \"${f}.__clean\" && mv \"${f}.__clean\" \"$f\" || true\n  fi\ndone\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -225,7 +248,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5A8F8605212E58D5FEE2F170 /* Build configuration list for PBXProject "CoffeeBreak" */;
+			buildConfigurationList = 5A8F8605212E58D5FEE2F170 /* Build configuration list for PBXProject "CoffeeRun" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -238,7 +261,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				66E0DE4D96B256059A21FDE1 /* CoffeeBreak */,
+				66E0DE4D96B256059A21FDE1 /* CoffeeRun */,
 			);
 		};
 /* End PBXProject section */
@@ -250,8 +273,8 @@
 			files = (
 				BD9C09DDB7394425870713A7 /* coffee.caf in Resources */,
 				F80439F9BA854F13A92DD53D /* coffeerun_herobig.png in Resources */,
-				3188E174D14B46B4A6CC488B /* "coffeerun_herobig@2x.png" in Resources */,
-				ED8E9A03CA1B4FCA85D08BDE /* "coffeerun_herobig@3x.png" in Resources */,
+				3188E174D14B46B4A6CC488B /* coffeerun_herobig@2x.png in Resources */,
+				ED8E9A03CA1B4FCA85D08BDE /* coffeerun_herobig@3x.png in Resources */,
 				84FB9700D68E4F818B02AE83 /* AppIcon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,7 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F46EA49EF6C1D15193102CE /* CoffeeBreakApp.swift in Sources */,
+				6F46EA49EF6C1D15193102CE /* CoffeeRunApp.swift in Sources */,
 				F9A2BE75B275FD355381028B /* CoffeeStatus.swift in Sources */,
 				709C2291A7E4CCDE92075C6C /* Peer.swift in Sources */,
 				89446C7D16BED3F4F2C5E109 /* NetworkService.swift in Sources */,
@@ -362,7 +385,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "";
 				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS = NO;
-				CODE_SIGN_ENTITLEMENTS = CoffeeBreak/CoffeeBreak.entitlements;
+				CODE_SIGN_ENTITLEMENTS = CoffeeRun/CoffeeRun.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -370,13 +393,15 @@
 				DEVELOPMENT_TEAM = 9A2X6DCWL2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = CoffeeBreak/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_FILE = CoffeeRun/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CoffeeRun;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.CoffeeRUN.ViyataRutas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -390,7 +415,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "";
 				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS = NO;
-				CODE_SIGN_ENTITLEMENTS = CoffeeBreak/CoffeeBreak.entitlements;
+				CODE_SIGN_ENTITLEMENTS = CoffeeRun/CoffeeRun.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -398,13 +423,15 @@
 				DEVELOPMENT_TEAM = 9A2X6DCWL2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = CoffeeBreak/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_FILE = CoffeeRun/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CoffeeRun;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.CoffeeRUN.ViyataRutas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -469,7 +496,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5A8F8605212E58D5FEE2F170 /* Build configuration list for PBXProject "CoffeeBreak" */ = {
+		5A8F8605212E58D5FEE2F170 /* Build configuration list for PBXProject "CoffeeRun" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7F5A50856DF4961F6C52065C /* Debug */,
@@ -478,7 +505,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7D2A15A8957DB8F6C13353C6 /* Build configuration list for PBXNativeTarget "CoffeeBreak" */ = {
+		7D2A15A8957DB8F6C13353C6 /* Build configuration list for PBXNativeTarget "CoffeeRun" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EC9D297F1F58A088220B12E3 /* Debug */,

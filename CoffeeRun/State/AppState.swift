@@ -16,7 +16,7 @@ final class AppState: ObservableObject {
     @Published private(set) var statusTimestamp: Date = Date()
     @Published private(set) var ownRunID: UUID? = nil
     @Published private(set) var ownStartsAt: Date? = nil
-    /// If non-nil, our active coffee run is scoped to this group — only
+    /// If non-nil, our active Brwup is scoped to this group — only
     /// members of the group will see the run card on their menu.
     @Published private(set) var ownAudienceGroupID: UUID? = nil
 
@@ -263,7 +263,7 @@ final class AppState: ObservableObject {
         activePeers.filter { $0.status.isCoffeeSignal }
     }
 
-    /// All currently-published coffee runs nearby, organizer first then
+    /// All currently-published Brwups nearby, organizer first then
     /// joiners. Sorted with the most-recent organizer at the top.
     /// Audience-scoped runs are filtered out if we're not a member.
     ///
@@ -459,7 +459,7 @@ final class AppState: ObservableObject {
         }
     }
 
-    /// Start a coffee run that others can join. `minutes` is how many
+    /// Start a Brwup that others can join. `minutes` is how many
     /// minutes from now the run actually starts (0 = immediately).
     /// `audience` is the group ID the run is scoped to — pass `nil`
     /// to make it visible to everyone on the network.
@@ -470,7 +470,7 @@ final class AppState: ObservableObject {
         setStatus(.goingNow)
     }
 
-    /// Join an existing coffee run published by another peer. We inherit
+    /// Join an existing Brwup published by another peer. We inherit
     /// the run's audience scope so we don't accidentally widen visibility.
     func joinRun(_ run: CoffeeRun) {
         self.ownRunID = run.id
