@@ -1,6 +1,6 @@
 import Foundation
 
-/// A coffee run is one organizer plus the people who joined them.
+/// A Brwup is one organizer plus the people who joined them.
 /// Built by `AppState` from the flat list of network peers.
 struct CoffeeRun: Identifiable, Equatable {
     /// Always equals the organizer's peer ID.

@@ -2,16 +2,16 @@ import Foundation
 import Network
 import Combine
 
-/// Discovers and broadcasts Coffee Break peers on the local network via Bonjour.
+/// Discovers and broadcasts Brwup peers on the local network via Bonjour.
 ///
 /// Each instance publishes its current status as TXT-record metadata on a
-/// `_coffeebreak._tcp` service, and browses for other instances doing the same.
+/// `_coffeerun._tcp` service, and browses for other instances doing the same.
 /// No data ever leaves the LAN.
 @MainActor
 final class NetworkService: ObservableObject {
     @Published private(set) var peers: [Peer] = []
 
-    private let serviceType = "_coffeebreak._tcp"
+    private let serviceType = "_coffeerun._tcp"
     private let peerID: UUID
 
     private var listener: NWListener?
@@ -106,13 +106,13 @@ final class NetworkService: ObservableObject {
             }
             listener.stateUpdateHandler = { state in
                 if case .failed(let error) = state {
-                    print("CoffeeBreak listener failed: \(error)")
+                    print("CoffeeRun listener failed: \(error)")
                 }
             }
             listener.start(queue: .main)
             self.listener = listener
         } catch {
-            print("CoffeeBreak listener could not start: \(error)")
+            print("CoffeeRun listener could not start: \(error)")
         }
     }
 
@@ -181,7 +181,7 @@ final class NetworkService: ObservableObject {
         }
         browser.stateUpdateHandler = { state in
             if case .failed(let error) = state {
-                print("CoffeeBreak browser failed: \(error)")
+                print("CoffeeRun browser failed: \(error)")
             }
         }
         browser.start(queue: .main)

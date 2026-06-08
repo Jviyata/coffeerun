@@ -55,7 +55,7 @@ struct MenuContentView: View {
 
     private var headerBar: some View {
         HStack(spacing: 6) {
-            Text("Coffee Run")
+            Text("Brwup")
                 .font(.system(size: 15, weight: .semibold))
             Spacer()
             Button {
@@ -153,11 +153,11 @@ struct MenuContentView: View {
             if let audience = ownAudienceName() {
                 return "Brewing with the \(audience) crew"
             }
-            return "Brewing a coffee run"
+            return "Brewing a Brwup"
         case .joining:
             // Past-tense + possessive reads as "this is done" not "in progress"
             if let run = appState.ownRun { return "Joined \(run.organizer.displayName)'s run" }
-            return "Joined a coffee run"
+            return "Joined a Brwup"
         }
     }
 
@@ -308,7 +308,7 @@ struct MenuContentView: View {
     private var actionButtons: some View {
         HStack(spacing: 8) {
             BigActionButton(
-                title: "Coffee Run",
+                title: "Brwup",
                 subtitle: "Start a run",
                 iconName: "cup.and.saucer.fill",
                 background: Color(red: 0.83, green: 0.65, blue: 0.45),
@@ -574,7 +574,7 @@ struct MenuContentView: View {
     }
 
     /// Empty state — says *why* the menu is quiet. The actual actions
-    /// (Coffee Run button up top, "Invite a coworker" row below) already
+    /// (Brwup button up top, "Invite a coworker" row below) already
     /// live in the menu, so we don't duplicate them here.
     private var emptyActivityRow: some View {
         HStack(alignment: .top, spacing: 10) {
@@ -685,24 +685,24 @@ struct MenuContentView: View {
                 } else {
                     suffix = "\(first.displayName) + \(run.joiners.count - 1) joined"
                 }
-                return "Your coffee run · \(suffix)"
+                return "Your Brwup · \(suffix)"
             }
             if let a = audience {
-                return "Your coffee run · \(a) crew only · waiting for someone to join"
+                return "Your Brwup · \(a) crew only · waiting for someone to join"
             }
-            return "Your coffee run · waiting for someone to join"
+            return "Your Brwup · waiting for someone to join"
         }
 
         // Other people's runs — flag explicitly when we ourselves are in it.
         let amIIn = appState.isInRun(run)
         let who = run.organizer.displayName
         if amIIn {
-            return "You joined \(who)'s coffee run"
+            return "You joined \(who)'s Brwup"
         }
         if let a = audience {
             return "\(who) is brewing with the \(a) crew"
         }
-        return "\(who) is brewing a coffee run"
+        return "\(who) is brewing a Brwup"
     }
 
     private func timingPhrase(for run: CoffeeRun) -> String {
@@ -759,7 +759,7 @@ struct MenuContentView: View {
                 icon: "person.crop.circle.badge.plus",
                 iconColor: Color.accentColor,
                 title: "Invite a coworker",
-                subtitle: "Share a QR or link to download Coffee Run",
+                subtitle: "Share a QR or link to download Brwup",
                 trailing: AnyView(Image(systemName: "chevron.right").font(.system(size: 11)).foregroundStyle(.tertiary)),
                 action: {
                     appState.openInvite?()
@@ -847,7 +847,7 @@ struct MenuContentView: View {
                 appState.openSettings?()
                 dismissMenuBarPopover()
             }
-            bottomRow(icon: "power", title: "Quit Coffee Run", color: .red) {
+            bottomRow(icon: "power", title: "Quit Brwup", color: .red) {
                 NSApplication.shared.terminate(nil)
             }
         }
@@ -921,7 +921,7 @@ struct MenuContentView: View {
                 message = "Coffee run started\(scopeSuffix) — visible for \(appState.expiryMinutes) min ✓"
             }
         case .joining:
-            message = "Joined the coffee run ✓"
+            message = "Joined the Brwup ✓"
         case .available, .notAvailable:
             message = nil   // status itself is visible in hero card, no toast spam
         }

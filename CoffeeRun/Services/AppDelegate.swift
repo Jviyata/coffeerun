@@ -3,7 +3,7 @@ import SwiftUI
 
 /// Holds shared state and provides hooks (popover dismiss, settings window
 /// opener) that need AppKit access. The actual menu bar item is rendered by
-/// SwiftUI's `MenuBarExtra` scene in `CoffeeBreakApp` — we tried managing
+/// SwiftUI's `MenuBarExtra` scene in `CoffeeRunApp` — we tried managing
 /// `NSStatusItem` ourselves but `NSStatusBar.system` returns a scene-proxy
 /// (`NSSceneStatusItem`) whenever SwiftUI is linked, and that proxy only
 /// renders when a `MenuBarExtra` scene drives it.
@@ -36,7 +36,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         NSLog("[CoffeeRun] menu bar helpers wired")
     }
 
-    // MARK: - Global hotkey (⌃⌥C → start a coffee run from anywhere)
+    // MARK: - Global hotkey (⌃⌥C → start a Brwup from anywhere)
 
     private func registerGlobalHotkey() {
         hotkey.onTrigger = { [weak self] in

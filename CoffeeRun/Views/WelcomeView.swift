@@ -18,7 +18,7 @@ struct WelcomeView: View {
                 }
                 .frame(width: 36, height: 36)
                 VStack(alignment: .leading, spacing: 2) {
-                    Text("Welcome to Coffee Run ☕")
+                    Text("Welcome to Brwup ☕")
                         .font(.headline)
                     Text("See who nearby is brewing coffee — only with your crew.")
                         .font(.caption)
@@ -43,7 +43,7 @@ struct WelcomeView: View {
                     .disabled(name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
             }
 
-            Text("Coffee Run only chats with people right around you.")
+            Text("Brwup only chats with people right around you.")
                 .font(.caption2)
                 .foregroundStyle(.tertiary)
         }

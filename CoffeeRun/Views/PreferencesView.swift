@@ -52,7 +52,7 @@ private struct ProfileTab: View {
                     VStack(alignment: .leading, spacing: 2) {
                         Text(profile.displayName.isEmpty ? "—" : profile.displayName)
                             .font(.headline)
-                        Text("On Coffee Run since \(memberSinceLabel)")
+                        Text("On Brwup since \(memberSinceLabel)")
                             .font(.caption)
                             .foregroundStyle(.secondary)
                     }
@@ -164,7 +164,7 @@ private struct NotificationsTab: View {
             Section("Full-screen steam") {
                 Toggle("Show steam when anyone brews coffee",
                        isOn: $appState.showSteamForAllSignals)
-                Text("By default, full-screen steam only fires for your own coffee runs and when someone joins a run you started. Turn this on to also see it for every brew nearby — fun in small crews, distracting in bigger ones.")
+                Text("By default, full-screen steam only fires for your own Brwups and when someone joins a run you started. Turn this on to also see it for every brew nearby — fun in small crews, distracting in bigger ones.")
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }
@@ -188,9 +188,9 @@ private struct NotificationsTab: View {
             VStack(alignment: .leading, spacing: 4) {
                 HStack(spacing: 6) {
                     Image(systemName: "exclamationmark.triangle.fill").foregroundStyle(.orange)
-                    Text("macOS is blocking buzzes for Coffee Run").font(.caption)
+                    Text("macOS is blocking buzzes for Brwup").font(.caption)
                 }
-                Text("Open System Settings → Notifications → Coffee Run and turn “Allow Notifications” on.")
+                Text("Open System Settings → Notifications → Brwup and turn “Allow Notifications” on.")
                     .font(.caption2)
                     .foregroundStyle(.secondary)
             }
@@ -198,7 +198,7 @@ private struct NotificationsTab: View {
             VStack(alignment: .leading, spacing: 8) {
                 HStack(spacing: 6) {
                     Image(systemName: "info.circle.fill").foregroundStyle(.secondary)
-                    Text("Coffee Run hasn’t asked to buzz you yet").font(.caption)
+                    Text("Brwup hasn’t asked to buzz you yet").font(.caption)
                 }
                 Button("Allow buzzes") {
                     appState.requestNotificationPermission()
@@ -242,10 +242,10 @@ private struct GeneralTab: View {
             }
 
             Section("Startup") {
-                Toggle("Launch Coffee Run at login", isOn: $appState.startAtLogin)
+                Toggle("Launch Brwup at login", isOn: $appState.startAtLogin)
             }
 
-            Section("Quick coffee run") {
+            Section("Quick Brwup") {
                 HStack {
                     Label("Global shortcut", systemImage: "keyboard")
                         .foregroundStyle(.secondary)
@@ -256,14 +256,14 @@ private struct GeneralTab: View {
                         .padding(.vertical, 3)
                         .background(RoundedRectangle(cornerRadius: 5).fill(Color.primary.opacity(0.08)))
                 }
-                Text("Press ⌃⌥C from anywhere on your Mac to start an immediate coffee run, open to everyone nearby. The menu opens so you can cancel or adjust.")
+                Text("Press ⌃⌥C from anywhere on your Mac to start an immediate Brwup, open to everyone nearby. The menu opens so you can cancel or adjust.")
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }
 
             Section("Try it out") {
                 Toggle("Show a demo crew in the menu", isOn: $appState.demoModeEnabled)
-                Text("Adds a few fake coworkers and a sample run so you can see what Coffee Run looks like with an active crew. Doesn't broadcast anything or change your stats.")
+                Text("Adds a few fake coworkers and a sample run so you can see what Brwup looks like with an active crew. Doesn't broadcast anything or change your stats.")
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }
@@ -299,7 +299,7 @@ private struct AboutHelpTab: View {
                 helpSection(title: "Day-to-day", items: [
                     ("cup.and.saucer", "Available / Not available",
                      "What you broadcast when you're idle. Click the menu bar cup → pick one. It sticks across launches."),
-                    ("figure.walk", "Coffee Run",
+                    ("figure.walk", "Brwup",
                      "Start a run. Pick Now, In 5 min, or In 15 min. Everyone nearby sees your run and can tap Join."),
                     ("hand.wave.fill", "Join",
                      "Someone else started a run. Click Join on their card (or in the notification) → you're added. They see you joined."),
@@ -318,14 +318,14 @@ private struct AboutHelpTab: View {
 
                 helpSection(title: "Coffee energy", items: [
                     ("☕", "Cups with your crew",
-                     "Each completed Coffee Run adds 1 cup. The header shows your cups today and the crew total."),
+                     "Each completed Brwup adds 1 cup. The header shows your cups today and the crew total."),
                     ("👥", "People in your crew",
                      "Anyone you've ever brewed coffee with nearby. Carries across all your crews (home, office, cafés).")
                 ])
 
                 helpSection(title: "Privacy", items: [
                     ("lock.fill", "Local network only",
-                     "Coffee Run uses Bonjour / mDNS to find your crew on the same Wi-Fi. Nothing leaves your local network."),
+                     "Brwup uses Bonjour / mDNS to find your crew on the same Wi-Fi. Nothing leaves your local network."),
                     ("nosign", "No accounts, no cloud",
                      "No login, no analytics, no servers. Your name and profile live in macOS preferences on this Mac.")
                 ])
@@ -340,9 +340,9 @@ private struct AboutHelpTab: View {
 
     private var helpHeader: some View {
         VStack(alignment: .leading, spacing: 4) {
-            Text("How Coffee Run works")
+            Text("How Brwup works")
                 .font(.title2.weight(.bold))
-            Text("A tiny menu bar app for spontaneous office coffee runs.")
+            Text("A tiny menu bar app for spontaneous office Brwups.")
                 .font(.callout)
                 .foregroundStyle(.secondary)
         }
@@ -383,7 +383,7 @@ private struct AboutHelpTab: View {
 
     private var aboutFooter: some View {
         VStack(alignment: .leading, spacing: 4) {
-            Text("Coffee Run")
+            Text("Brwup")
                 .font(.headline)
             Text("Version 1.1 (build 2)")
                 .font(.caption)

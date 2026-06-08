@@ -1,6 +1,6 @@
 import AppKit
 
-/// Registers a global ⌃⌥C hotkey that lets the user start a coffee run
+/// Registers a global ⌃⌥C hotkey that lets the user start a Brwup
 /// from anywhere on macOS without opening the menu.
 ///
 /// Two monitors are needed because `addGlobalMonitorForEvents` only fires
