@@ -745,9 +745,10 @@ export default function Home() {
         <img src="/brwup-logo.png" alt="Brwup" className="h-5 w-auto object-contain opacity-70" />
         <div className="text-[var(--latte)]/60">&copy; 2026 Brwup</div>
         <div className="flex gap-7">
-          <Link to="/privacy" className="hover:text-[var(--espresso)] transition-colors">Privacy Policy</Link>
-          <Link to="/terms"   className="hover:text-[var(--espresso)] transition-colors">Terms</Link>
-          <a href="#"         className="hover:text-[var(--espresso)] transition-colors">Twitter / X</a>
+          <Link to="/privacy"   className="hover:text-[var(--espresso)] transition-colors">Privacy Policy</Link>
+          <Link to="/terms"     className="hover:text-[var(--espresso)] transition-colors">Terms</Link>
+          <Link to="/copyright" className="hover:text-[var(--espresso)] transition-colors">Copyright</Link>
+          <a href="#"           className="hover:text-[var(--espresso)] transition-colors">Twitter / X</a>
         </div>
       </footer>
 
